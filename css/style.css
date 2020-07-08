@@ -1,20 +1,65 @@
 :root {
   /* Variables */
-  --black: #222;
+  /* Define colors as colors */
+  --green: #31a38d;
+  --lightGreen: #80d4c4;
+  --midGreen: #4dbba6;
+  --red: #ff5407;
+  --yellow: #fde24f;
+  --black: #23272f;
+  --darkBlue: #00214d;
+  --grey: #bfbfbf;
+  --lightGrey: #f2f4f6;
+
+  /* Define color intentions */
+  --background: var(--lightGrey);
+  --textColor: var(--black);
 }
 
 body {
-  background: var(--black);
-  color: white;
+  background: var(--background);
+  color: var(--textColor);
+}
+
+.dark {
+  background: var(--textColor);
+  color: var(--background);
+}
+
+/* Least to most (specificity) */
+
+/* Elements - h1, div, etc */
+/* Class, attribute, [type="input"] */
+/* IDs */
+/* !important - dont ever use */
+
+/* More specific based on load order */
+
+/* 
+h1 {
+  font-size: 1rem;
+}
+
+This one will apply - defined LOWER (cascade)
+h1 {
+  font-size: 2rem;
+}
+*/
+
+/* 
+This one will apply - more specific
+.header {
+  font-size: 2rem;
 }
 
 h1 {
-  --black: blue;
-  color: var(--black);
+  font-size: 1rem;
+} */
+
+.wrapper .container .header {
+  font-size: 2rem;
 }
 
-@media only screen and (max-width: 800px) {
-  :root {
-    --black: red;
-  }
+.container {
+  font-size: 1rem;
 }
