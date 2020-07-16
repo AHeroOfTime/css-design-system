@@ -6,7 +6,7 @@
   --green: #31a38d;
   --lightGreen: #80d4c4;
   --midGreen: #4dbba6;
-  --red: #ff5407;
+  --red: #ff5470;
   --yellow: #fde24f;
   --black: #23272f;
   --darkBlue: #00214d;
@@ -14,6 +14,8 @@
   --lightGrey: #f2f4f6;
 
   /* Define color intentions */
+  --primary: var(--green);
+  --danger: var(--red);
   --background: var(--lightGrey);
   --textColor: var(--black);
   --lineColor: var(--grey);
@@ -54,7 +56,7 @@ p a,
 blockquote a {
   color: var(--black);
   text-decoration: none;
-  border-bottom: 2px solid var(--green);
+  border-bottom: 2px solid var(--primary);
 }
 
 h1,
@@ -139,6 +141,36 @@ select {
 
 hr {
   border-top: var(--line);
+}
+
+button {
+  --buttonColor: var(--primary);
+
+  appearance: none;
+  color: var(--textColor);
+  background-color: var(--buttonColor);
+  border: none;
+  border-radius: 10px;
+  padding: 5px 25px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+}
+
+button[disabled] {
+  opacity: 0.4;
+}
+
+/* .cancel can mean anything */
+
+button.cancel {
+  --buttonColor: var(--danger);
+  --textColor: white;
+}
+
+button.small {
+  font-size: var(--smallText);
 }
 
 /* Least to most (specificity) */
